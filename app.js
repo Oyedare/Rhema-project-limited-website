@@ -1,15 +1,10 @@
-function myFunction() {
-  let x = document.querySelector(".nav-links");
-  let close = document.querySelector('.closebtn')
-  if (x.style.display === "block") {
-    x.style.display = "none";
-    close.style.display = 'none';
-  }
-   else {
-    x.style.display = "block";
-    close.style.display = 'content';
-  }
-}
-function closeNav() {
-  document.querySelector(".nav-links").style.display = "none";
-}
+const hamburger = document.querySelector('.hamburger')
+const navLinks = document.querySelector('.nav-links')
+const links = document.querySelectorAll('.nav-links li')
+
+hamburger.addEventListener('click', () =>{
+  navLinks.classList.toggle('open')
+  links.forEach(link =>{
+    link.classList.toggle('fade')
+  })
+})
