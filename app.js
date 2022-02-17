@@ -1,10 +1,18 @@
-const hamburger = document.querySelector('.hamburger')
-const navLinks = document.querySelector('.nav-links')
-const links = document.querySelectorAll('.nav-links li')
+const navbar = document.querySelector('.navbar');
+const menuBtn = document.querySelector('#menu-btn')
+const searchBtn = document.querySelector('#search-btn')
+const searchForm = document.querySelector('.search-form')
 
-hamburger.addEventListener('click', () =>{
-  navLinks.classList.toggle('open')
-  links.forEach(link =>{
-    link.classList.toggle('fade')
-  })
+menuBtn.addEventListener('click',()=>{
+  navbar.classList.toggle('active')
+  searchForm.classList.remove('active')
 })
+searchBtn.addEventListener('click',()=>{
+  searchForm.classList.toggle('active')
+  navbar.classList.remove('active')
+})
+
+window.onscroll = () =>{
+  navbar.classList.remove('active')
+  searchForm.classList.remove('active')
+}
